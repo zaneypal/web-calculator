@@ -1,6 +1,15 @@
 let calculation = '';
 const output = document.getElementById('output');
 
+/*function toggle(className) {
+    const className = document.query
+    if (element.classList.contains('is-toggled')) {
+        element.classList.remove('is-toggled');
+    } else {
+        element.classList.add('is-toggled');
+    }
+} */
+
 function updateCalculation(value) {
 
     if (value === '0' && calculation === '0') {
