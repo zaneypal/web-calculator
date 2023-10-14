@@ -6,98 +6,106 @@
     <title>Online Web Calculator</title>
   </head>
   <body>
-    <div id="output-zone">
-      <p id="output">0</p>
+    <h1>Online Web Calculator</h1>
+    <div class="main-content">
+      <div id="calculator">
+        <div id="output-zone">
+          <p id="output"></p>
+        </div>
+
+        <div id="calculator-board">
+          <p>
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('7');
+              ">7</button>
+            
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('8');
+              ">8</button>
+
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('9');
+              ">9</button>
+
+            <button class="right-panel-buttons" onclick="
+              updateCalculation(' / ');
+              ">&divide</button>
+          </p>
+
+          <p>
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('4');
+              ">4</button>
+            
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('5');
+              ">5</button>
+
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('6');
+              ">6</button>
+
+            <button class="right-panel-buttons" onclick="
+              updateCalculation(' * ');
+              ">&#215;</button>
+          </p>
+
+          <p>
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('1');
+              ">1</button>
+            
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('2');
+              ">2</button>
+
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('3');
+              ">3</button>
+
+            <button class="right-panel-buttons" onclick="
+              updateCalculation(' - ');
+              ">-</button>
+          </p>
+
+          <p>
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('0');
+              ">0</button>
+            
+            <button class="left-panel-buttons" onclick="
+              updateCalculation('.');
+              ">.</button>
+
+            <button class="left-panel-buttons" onclick="
+              updateCalculation();
+            ">=</button>
+
+            <button class="right-panel-buttons" onclick="
+              updateCalculation(' + ');
+              ">+</button>
+          </p>
+
+          <p>
+            <button id="clear-button" class="left-panel-buttons" onclick="
+              clearAllOutput();
+            ">AC</button>
+
+            <button id="clear-button"
+            class="left-panel-buttons" onclick="
+              delChar();
+              ">&#8592;</button>
+          </p>
+        
+        </div>
+      </div>
     </div>
 
-    <div id="calculator">
-      <p>
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('7');
-          ">7</button>
-        
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('8');
-          ">8</button>
+    <footer>
+      <img id="icon" src="images/Settings-icon.png" alt="">
+    </footer>
 
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('9');
-          ">9</button>
-
-        <button class="right-panel-buttons" onclick="
-          updateCalculation('/');
-          ">&divide</button>
-      </p>
-
-      <p>
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('4');
-          ">4</button>
-        
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('5');
-          ">5</button>
-
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('6');
-          ">6</button>
-
-        <button class="right-panel-buttons" onclick="
-          updateCalculation('*');
-          ">&#215;</button>
-      </p>
-
-      <p>
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('1');
-          ">1</button>
-        
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('2');
-          ">2</button>
-
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('3');
-          ">3</button>
-
-        <button class="right-panel-buttons" onclick="
-          updateCalculation('-');
-          ">-</button>
-      </p>
-
-      <p>
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('0');
-          ">0</button>
-        
-        <button class="left-panel-buttons" onclick="
-          updateCalculation('.');
-          ">.</button>
-
-        <button class="left-panel-buttons" onclick="
-          calculation = eval(calculation);
-          output.innerHTML = calculation;
-        ">=</button>
-
-        <button class="right-panel-buttons" onclick="
-          updateCalculation('+');
-          ">+</button>
-      </p>
-
-      <p>
-        <button id="clear-button" class="left-panel-buttons" onclick="
-          clearAllOutput();
-        ">AC</button>
-
-        <button id="clear-button"
-        class="left-panel-buttons" onclick="
-          delChar();
-          ">&#8592;</button>
-      </p>
-    </div>
-   
     <script src="07-calculator-project.js">
-      
     </script>
   </body>
 </html>

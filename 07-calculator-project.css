@@ -1,19 +1,64 @@
+@keyframes tilt {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+
 body {
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(133, 89, 35);
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     user-select: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+.main-content {
+    display: block;
+}
+
+footer {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#icon:active {
+    border: solid 1px rgb(191, 191, 191);
+    /* animation: tilt 0.8s;
+    animation-fill-mode:forwards; */
+}
+
+#calculator {
+    display: inline-block;
+    border-radius: 32px;
+    border-top-right-radius: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    box-shadow: 7px 11px 1px rgb(196, 196, 196);
 }
 
 #output-zone {
     margin-top: 20px;
     margin-left: 10px;
     height: 25px;
-    width: 227px;
+    width: 211px;
     background: linear-gradient(to bottom, #51d9fa, #06576d);
     padding-left: 15px;
     padding-bottom: 60px;
-    outline: solid 10px #f8f8f8;
-    border: solid 2px rgb(214, 214, 214);
+    outline: solid 10px #6b6b6b;
+    border: solid 10px rgb(46, 46, 46);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     user-select: all;
@@ -22,13 +67,12 @@ body {
 
 #output {
     color: rgb(251, 251, 251);
-    margin-bottom: 50px;
-    font-size: 38px;
+    font-size: 30px;
     letter-spacing: 0.4px;
     text-shadow: 1px 1px 8px white;
 }
 
-#calculator {
+#calculator-board {
     background: linear-gradient(to bottom, #f8f8f8, #f2f2f2);
     height: 350px;
     width: 250px;
@@ -50,22 +94,22 @@ button {
 }
 
 .left-panel-buttons {
-    background-color: rgb(63, 59, 59);
+    background-color: rgb(95, 95, 95);
     box-shadow: 2px 3px 1px rgb(36, 36, 36), 2.6px 3.5px 0.8px rgb(130, 130, 130);
 }
 
 .left-panel-buttons:hover {
-    background-color: rgb(40, 40, 41);
+    background-color: rgb(116, 116, 116);
 }
 
 .left-panel-buttons:active {
-    transform: translate(2.6px, 3.5px);
+    transform: translate(2.4px, 3.5px);
     box-shadow: 0.6px 0.6px 1px rgb(130, 130, 130);
 }
 
 .right-panel-buttons {
     background-color: rgb(255, 123, 0);
-    box-shadow: 2.4px 3px 1px rgb(216, 123, 9), 2.6px 3.5px 1px white;
+    box-shadow: 2.4px 3px 1px rgb(216, 121, 5), 2.6px 3.5px 1px rgb(181, 110, 23);
 }
 
 .right-panel-buttons:hover {
@@ -73,8 +117,8 @@ button {
 }
 
 .right-panel-buttons:focus {
-    transform: translate(2.6px, 3.5px);
-    box-shadow: 0.6px 0.6px 1px white;
+    transform: translate(2.4px, 3.5px);
+    box-shadow: 0.8px 0.6px 1px rgb(181, 110, 23);
 }
 
 #clear-button {

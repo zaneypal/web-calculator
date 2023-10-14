@@ -1,0 +1,35 @@
+To Add:
+
+- A history clear button (red button on the side of the calculator)
+- A parentheses button (for PEMDAS)
+- A blinking cursor in the output zone
+- Arrow keys to add or delete values at a certain spot
+
+- The screen has to follow along when the values exceed the screen space. The blinking cursor moves to the right as new characters are added in, and the characters will move to the left of the screen, deleting one char at a time. The actual calculation variable will still be preserved in an object. In that object, create another variable and it will be what outputs to the screen.
+
+- Exponent and square root buttons 
+- Percent and tax buttons
+- A settings feature that lets you change:
+    • Calculator model/brand (I will design my own models/brands)
+    • Calculator style (color of the calculator base, buttons, screen, etc.) customizable for each model you make
+    • Webpage background color and font (have a few themes to choose from)
+    • Enable/disable glow when hovering over buttons
+    • Disable ability to write any calculations that will cause syntax errors
+    •    
+- +/- button
+
+- Button that lets you bring back your previous command (MEM), and an up and down arrow to parse the calculation history and choose the one you want.
+
+- Ability to use the keyboard as the calculator (e.g. pressing '9' on your keyboard will input 9 using the calculator.)
+
+
+
+
+
+
+
+
+
+
+
+

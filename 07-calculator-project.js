@@ -1,5 +1,6 @@
 let calculation = '';
 const output = document.getElementById('output');
+const errorMessage = 'error: Syntax';
 
 /*function toggle(className) {
     const className = document.query
@@ -12,31 +13,37 @@ const output = document.getElementById('output');
 
 function updateCalculation(value) {
 
-    if (value === '0' && calculation === '0') {
-    } else if (calculation === '0') {
-        calculation = value;
+    if (typeof value === 'undefined') {
+        try {
+            output.innerHTML = eval(calculation) || errorMessage;
+        } catch (calculation) {
+            if (calculation instanceof SyntaxError) {
+                output.innerHTML = errorMessage;
+            }
+        }
+        if (output.innerHTML !== errorMessage) {
+            calculation = eval(calculation);
+        }
     } else {
-        calculation += value;
-    }
-
-    output.innerHTML = calculation;
-}
-
-function clearOutput() {
-    calculation = '0';
-    output.innerHTML = calculation;
+        if (value === '0' && output.innerHTML === '0') {
+        } else {
+            calculation += value;
+            output.innerHTML = calculation;
+        }
+    } 
 }
 
 function clearAllOutput() {
-    calculation = '0';
-    output.innerHTML = calculation;
+    output.innerHTML = '';
+    calculation = '';
 }
 
 function delChar() {
-    if (output.innerHTML === '0') {
+    if (output.innerHTML === errorMessage) {
+        output.innerHTML = calculation;
     } else {
-        if (output.innerHTML.length === 1) {
-            calculation = '0';
+        if (output.innerHTML[output.innerHTML.length - 1] === ' ') {
+            calculation = output.innerText.substring(0, output.innerHTML.length - 2);
         } else {
             calculation = output.innerText.substring(0, output.innerHTML.length - 1);
         }
