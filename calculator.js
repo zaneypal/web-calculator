@@ -14,13 +14,12 @@ const cursor = document.getElementById('cursor');
 } */
 
 function pauseBlinker() {
-    cursor.style.animation = "none";
-    cursor.style.opacity = "0";
+    cursor.style.zIndex = '-1';
 }
 
 function resumeBlinker(delayValue) {
-    cursor.style.animation = "blink 1s infinite";
-    cursor.style.animationDelay = `${String(delayValue)}s` || "1s";
+    cursor.style.zIndex = '0';
+    cursor.style.transition = 'z-index 5s';
 }
 
 function updateCalculation(value) {
@@ -30,12 +29,15 @@ function updateCalculation(value) {
         try {
             output.innerHTML = eval(calculation) || errorMessage;
         } catch (calculation) {
-            if (calculation instanceof SyntaxError) {
+            // Needs looking at
+            if (calculation instanceof SyntaxError || !Number(output.innerHTML[output.innerHTML.length - 1])) {
                 output.innerHTML = errorMessage;
             }
         }
         if (output.innerHTML !== errorMessage) {
             calculation = eval(calculation);
+        } else {
+            output.innerHTML = calculation;
         }
     } else {
         if (value === '0' && output.innerHTML === '0') {
@@ -44,8 +46,6 @@ function updateCalculation(value) {
             output.innerHTML = calculation;
         }
     } 
-
-        
 }
 
 function clearAllOutput() {
@@ -73,3 +73,23 @@ function delChar() {
 
     resumeBlinker();
 }
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Backspace') {
+        delChar();
+    } else if (event.key === ' ' || event.key === 'Enter') {
+        updateCalculation();
+    } else if (['0', '.'].includes(event.key) || Number(event.key)) {
+        updateCalculation(event.key);
+        if (event.key === '.') {
+            document.getElementById('calc-decimal').click()
+        } else {
+            document.getElementById(`calc${event.key}`).active();
+        }
+    } else if (['+', '-', '*', '/'].includes(event.key)) {
+        updateCalculation(` ${event.key} `);
+        document.getElementsByName
+    } else {
+        console.log(event.key);
+    }
+}, false);

@@ -3,6 +3,11 @@
   <head>
     <link rel="stylesheet" href="calculator.css">
     <link rel="icon" type="image/x-icon" href="images/calculator-icon.ico">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans:wght@300;400&family=Orbitron:wght@400;500;700;800&family=Pixelify+Sans:wght@400;500&family=Press+Start+2P&display=swap');
+    </style>
+
     <title>Online Web Calculator</title>
   </head>
   <body>
@@ -16,73 +21,73 @@
 
         <div id="calculator-board">
           <p>
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc7" onclick="
               updateCalculation('7');
               ">7</button>
             
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc8" onclick="
               updateCalculation('8');
               ">8</button>
 
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc9" onclick="
               updateCalculation('9');
               ">9</button>
 
-            <button class="right-panel-buttons" onclick="
+            <button class="right-panel-buttons" id="calc-divide" onclick="
               updateCalculation(' / ');
               ">&divide</button>
           </p>
 
           <p>
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc4" onclick="
               updateCalculation('4');
               ">4</button>
             
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc5" onclick="
               updateCalculation('5');
               ">5</button>
 
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc6" onclick="
               updateCalculation('6');
               ">6</button>
 
-            <button class="right-panel-buttons" onclick="
+            <button class="right-panel-buttons" id="calc-multiply" onclick="
               updateCalculation(' * ');
               ">&#215;</button>
           </p>
 
           <p>
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc1" onclick="
               updateCalculation('1');
               ">1</button>
             
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc2" onclick="
               updateCalculation('2');
               ">2</button>
 
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc3" onclick="
               updateCalculation('3');
               ">3</button>
 
-            <button class="right-panel-buttons" onclick="
+            <button class="right-panel-buttons" id="calc-subtract" onclick="
               updateCalculation(' - ');
               ">-</button>
           </p>
 
           <p>
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc0" onclick="
               updateCalculation('0');
               ">0</button>
             
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc-decimal" onclick="
               updateCalculation('.');
               ">.</button>
 
-            <button class="left-panel-buttons" onclick="
+            <button class="left-panel-buttons" id="calc-equals" onclick="
               updateCalculation();
             ">=</button>
 
-            <button class="right-panel-buttons" onclick="
+            <button class="right-panel-buttons" id="calc-plus" onclick="
               updateCalculation(' + ');
               ">+</button>
           </p>
@@ -101,7 +106,9 @@
         </div>
       </div>
 
-      <div class="settings"></div>
+      <div class="settings">
+        <p>Options</p>
+      </div>
     </div>
 
     <footer>

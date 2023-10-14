@@ -25,10 +25,12 @@ To Add:
 
 
 Working:
-- A blinking cursor in the output zone --> Cursor doesn't stop when inputting characters.
+- A blinking cursor in the output zone --> 
 
 Problems:
-- After you press an operation char (+-*/) and try to backspace it, it won't work the first time.
+- Cursor doesn't stop blinking when pressing buttons.
+- Adding 0 before any number and trying to calculate it brings back a totally different number. Find a way to remove all leading zeros.
+- Hitting enter when last char is a decimal point deletes the decimal point.
 
 
 
