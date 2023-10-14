@@ -2,6 +2,8 @@ let calculation = '';
 const output = document.getElementById('output');
 const errorMessage = 'error: Syntax';
 
+const cursor = document.getElementById('cursor');
+
 /*function toggle(className) {
     const className = document.query
     if (element.classList.contains('is-toggled')) {
@@ -11,8 +13,19 @@ const errorMessage = 'error: Syntax';
     }
 } */
 
-function updateCalculation(value) {
+function pauseBlinker() {
+    cursor.style.animation = "none";
+    cursor.style.opacity = "0";
+}
 
+function resumeBlinker(delayValue) {
+    cursor.style.animation = "blink 1s infinite";
+    cursor.style.animationDelay = `${String(delayValue)}s` || "1s";
+}
+
+function updateCalculation(value) {
+    pauseBlinker();
+    resumeBlinker(2.5);
     if (typeof value === 'undefined') {
         try {
             output.innerHTML = eval(calculation) || errorMessage;
@@ -31,14 +44,22 @@ function updateCalculation(value) {
             output.innerHTML = calculation;
         }
     } 
+
+        
 }
 
 function clearAllOutput() {
+    pauseBlinker();
+
     output.innerHTML = '';
     calculation = '';
+
+    resumeBlinker(3);
 }
 
 function delChar() {
+    pauseBlinker();
+
     if (output.innerHTML === errorMessage) {
         output.innerHTML = calculation;
     } else {
@@ -49,4 +70,6 @@ function delChar() {
         }
         output.innerHTML = calculation;
     }
+
+    resumeBlinker();
 }

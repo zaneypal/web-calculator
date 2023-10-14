@@ -2,7 +2,6 @@ To Add:
 
 - A history clear button (red button on the side of the calculator)
 - A parentheses button (for PEMDAS)
-- A blinking cursor in the output zone
 - Arrow keys to add or delete values at a certain spot
 
 - The screen has to follow along when the values exceed the screen space. The blinking cursor moves to the right as new characters are added in, and the characters will move to the left of the screen, deleting one char at a time. The actual calculation variable will still be preserved in an object. In that object, create another variable and it will be what outputs to the screen.
@@ -22,6 +21,14 @@ To Add:
 
 - Ability to use the keyboard as the calculator (e.g. pressing '9' on your keyboard will input 9 using the calculator.)
 
+
+
+
+Working:
+- A blinking cursor in the output zone --> Cursor doesn't stop when inputting characters.
+
+Problems:
+- After you press an operation char (+-*/) and try to backspace it, it won't work the first time.
 
 
 
