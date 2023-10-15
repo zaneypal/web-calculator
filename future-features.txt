@@ -19,13 +19,11 @@ To Add:
 
 - Button that lets you bring back your previous command (MEM), and an up and down arrow to parse the calculation history and choose the one you want.
 
-- Ability to use the keyboard as the calculator (e.g. pressing '9' on your keyboard will input 9 using the calculator.)
-
-
 
 
 Working:
-- A blinking cursor in the output zone --> 
+- A blinking cursor in the output zone
+- Ability to use the keyboard as the calculator (e.g. pressing '9' on your keyboard will input 9 using the calculator.)
 
 Problems:
 - Cursor doesn't stop blinking when pressing buttons.

@@ -33,14 +33,25 @@ h1 {
     color: white;
 }
 
-.main-content {
-    display: block;
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 28px;
+    margin-right: 3px;
 }
 
 footer {
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+
+.main-content {
+    display: block;
 }
 
 #options-icon {
@@ -117,6 +128,10 @@ footer {
     border-bottom-right-radius: 20px;
 }
 
+#calculator-board button:hover {
+    opacity: 0.8;
+}
+
 #mem-clear-button {
     position: absolute;
     right: -8px;
@@ -134,24 +149,9 @@ footer {
     box-shadow: none;
 }
 
-button {
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    width: 50px;
-    height: 50px;
-    color: white;
-    font-size: 28px;
-    margin-right: 3px;
-}
-
 .left-panel-buttons {
     background-color: rgb(95, 95, 95);
     box-shadow: 2px 3px 0px rgb(36, 36, 36), 2.6px 3.5px 0px rgb(130, 130, 130);
-}
-
-.left-panel-buttons:hover {
-    background-color: rgb(116, 116, 116);
 }
 
 .left-panel-buttons:active {
@@ -162,10 +162,6 @@ button {
 .right-panel-buttons {
     background-color: rgb(255, 123, 0);
     box-shadow: 2.4px 3px 0px rgb(216, 121, 5), 2.6px 3.5px 0px rgb(181, 110, 23);
-}
-
-.right-panel-buttons:hover {
-    background-color: rgb(255, 145, 61);
 }
 
 .right-panel-buttons:focus {
@@ -199,7 +195,7 @@ button {
     top: 0;
     bottom: 0;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     z-index: -1;
     opacity: 0;
