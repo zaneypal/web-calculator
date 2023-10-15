@@ -4,14 +4,25 @@ const errorMessage = 'error: Syntax';
 
 const cursor = document.getElementById('cursor');
 
-/*function toggle(className) {
-    const className = document.query
-    if (element.classList.contains('is-toggled')) {
-        element.classList.remove('is-toggled');
-    } else {
-        element.classList.add('is-toggled');
+function toggle(elemName, elemType) {
+    let element = undefined;
+
+    if (elemType === 'id') {
+        element = document.getElementById(elemName);
+    } else if (elemType === 'class') {
+        element = document.querySelector(elemName);
     }
-} */
+
+    if (element.classList.contains('toggle-on')) {
+        element.classList.remove('toggle-on');
+        element.classList.add('toggle-off');
+    } else {
+        if (element.classList.contains('toggle-off')) {
+            element.classList.remove('toggle-off');
+        }
+        element.classList.add('toggle-on');
+    }
+}
 
 function pauseBlinker() {
     cursor.style.zIndex = '-1';
@@ -81,11 +92,6 @@ document.addEventListener('keydown', (event) => {
         updateCalculation();
     } else if (['0', '.'].includes(event.key) || Number(event.key)) {
         updateCalculation(event.key);
-        if (event.key === '.') {
-            document.getElementById('calc-decimal').click()
-        } else {
-            document.getElementById(`calc${event.key}`).active();
-        }
     } else if (['+', '-', '*', '/'].includes(event.key)) {
         updateCalculation(` ${event.key} `);
         document.getElementsByName

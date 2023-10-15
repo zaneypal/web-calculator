@@ -103,16 +103,18 @@
               ">&#8592;</button>
           </p>
         
+          <div id="mem-clear-button"></div>
         </div>
       </div>
 
       <div class="settings">
         <p>Options</p>
       </div>
+
     </div>
 
     <footer>
-      <img id="icon" src="images/Settings-icon.png" alt="">
+      <img id="options-icon" src="images/Settings-icon.png" onclick="toggle('options-icon', 'id'); toggle('.settings', 'class');">
     </footer>
 
     <script src="calculator.js">

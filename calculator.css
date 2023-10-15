@@ -1,6 +1,6 @@
 @keyframes tilt {
     from {
-        transform: rotate(0deg);
+        transform: initial;
     }
     to {
         transform: rotate(90deg);
@@ -43,16 +43,14 @@ footer {
     bottom: 10px;
 }
 
-#icon {
+#options-icon {
     width: 50px;
     height: 50px;
     cursor: pointer;
 }
 
-#icon:active {
+.toggle-on#options-icon {
     border: solid 1px rgb(191, 191, 191);
-    /* animation: tilt 0.8s;
-    animation-fill-mode:forwards; */
 }
 
 #calculator {
@@ -61,7 +59,7 @@ footer {
     border-top-right-radius: 40px;
     margin-right: 20px;
     margin-left: 20px;
-    box-shadow: 7px 11px 1px rgb(196, 196, 196);
+    box-shadow: 7px 11px 0px rgb(196, 196, 196);
 }
 
 #output-zone {
@@ -92,7 +90,7 @@ footer {
     max-width: 190px;
     max-height: 50px;
     display: inline-block;
-    border: solid 1px red;
+    border: solid 1px rgb(0, 17, 255);
     z-index: 3;
 }
 
@@ -108,6 +106,7 @@ footer {
 }
 
 #calculator-board {
+    position: relative;
     user-select: none;
     background: linear-gradient(to bottom, #f8f8f8, #f2f2f2);
     height: 350px;
@@ -116,6 +115,23 @@ footer {
     padding-left: 15px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+#mem-clear-button {
+    position: absolute;
+    right: -8px;
+    top: 15px;
+    border-radius: 100%;
+    box-shadow: -1px 0 0px rgb(209, 0, 0);
+    width: 5px;
+    height: 17px;
+    background-color: rgb(230, 5, 5);
+    cursor: pointer;
+}
+
+#mem-clear-button:active {
+    transform: translateX(-1px);
+    box-shadow: none;
 }
 
 button {
@@ -131,7 +147,7 @@ button {
 
 .left-panel-buttons {
     background-color: rgb(95, 95, 95);
-    box-shadow: 2px 3px 1px rgb(36, 36, 36), 2.6px 3.5px 0.8px rgb(130, 130, 130);
+    box-shadow: 2px 3px 0px rgb(36, 36, 36), 2.6px 3.5px 0px rgb(130, 130, 130);
 }
 
 .left-panel-buttons:hover {
@@ -140,12 +156,12 @@ button {
 
 .left-panel-buttons:active {
     transform: translate(2.4px, 3.5px);
-    box-shadow: 0.6px 0.6px 1px rgb(130, 130, 130);
+    box-shadow: 0.6px 0.6px 0px rgb(130, 130, 130);
 }
 
 .right-panel-buttons {
     background-color: rgb(255, 123, 0);
-    box-shadow: 2.4px 3px 1px rgb(216, 121, 5), 2.6px 3.5px 1px rgb(181, 110, 23);
+    box-shadow: 2.4px 3px 0px rgb(216, 121, 5), 2.6px 3.5px 0px rgb(181, 110, 23);
 }
 
 .right-panel-buttons:hover {
@@ -154,13 +170,23 @@ button {
 
 .right-panel-buttons:focus {
     transform: translate(2.4px, 3.5px);
-    box-shadow: 0.8px 0.6px 1px rgb(181, 110, 23);
+    box-shadow: 0.8px 0.6px 0px rgb(181, 110, 23);
 }
 
 #clear-button {
     text-align: center;
     padding: 7px 2px;
     font-size: 19px;
+}
+
+#calc-equals {
+    background-color: rgb(238, 200, 13);
+    box-shadow: 2px 3px 1px rgb(214, 184, 32), 2.6px 3.5px 0.8px rgb(130, 130, 130);
+}
+
+#calc-equals:active {
+    transform: translate(2.4px, 3.5px);
+    box-shadow: 0.6px 0.6px 1px rgb(130, 130, 130);
 }
 
 .settings {
@@ -173,14 +199,23 @@ button {
     top: 0;
     bottom: 0;
     margin: auto;
-    background-color: rgb(227, 227, 227);
-    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.08s;
 }
 
 .settings p {
     text-align: center;
-    font-family: "Orbitron";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
+    font-size: 32px;
     text-transform: uppercase;
-    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.toggle-on.settings {
+    opacity: 1;
+    z-index: 30;
 }
