@@ -23,7 +23,7 @@
 }
 
 body {
-    background-color: rgb(10, 91, 138);
+    background-color: rgb(19, 147, 221);
     font-family: "Open Sans";
     
 }
@@ -52,16 +52,6 @@ footer {
 
 .main-content {
     display: block;
-}
-
-#options-icon {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-
-.toggle-on#options-icon {
-    border: solid 1px rgb(191, 191, 191);
 }
 
 #calculator {
@@ -185,30 +175,104 @@ footer {
     box-shadow: 0.6px 0.6px 1px rgb(130, 130, 130);
 }
 
+#options-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: border 0.06s;
+}
+
+.toggle-on#options-icon, #options-icon:active {
+    border: solid 1px rgb(191, 191, 191);
+}
+
+
 .settings {
     display: inline-block;
     position: absolute;
-    width: 500px;
+    width: 450px;
     height: 350px;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
     z-index: -1;
     opacity: 0;
     transition: opacity 0.08s;
 }
 
-.settings p {
+#settings-title {
+    margin-top: 10px;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 32px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.settings-category {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 10px;
+    text-transform: uppercase;
+}
+
+.settings-subcategory-bar {
+    display: block;
+    position: relative;
+    background-color: #51d9fa;
+    margin-left: 37px;
+    margin-bottom: 10px;
+    height: 30px;
+    text-justify: top;
+    padding-left: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.settings-subcategory {
+    position: absolute;
+    left: 10px;
+    top: -12px;
+}
+
+.settings-left-arrow {
+    width: 0;
+    height: 0;
+    border-top: solid 12px transparent;
+    border-bottom: solid 12px transparent;
+    border-right: solid 12px greenyellow;
+    position: absolute;
+    right: 140px;
+    top: 4px;
+}
+
+.settings-subcategory-option {
+    position: absolute;
+    right: 50px;
+    top: -18px;
+    background-color: yellow;
+    border: solid 1px black;
+    padding: 4px 8px;
+}
+
+.settings-right-arrow {
+    width: 0;
+    height: 0;
+    border-top: solid 12px transparent;
+    border-bottom: solid 12px transparent;
+    border-left: solid 12px greenyellow;
+    position: absolute;
+    right: 30px;
+    top: 4px;
 }
 
 .toggle-on.settings {
